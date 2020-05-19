@@ -1,0 +1,158 @@
+##############################################################################
+#    Filename   :  TestSuite.txt
+#
+#    Description:  Delpheon Automated Test Cases.
+#
+#    Version    :  1.0
+#    Created    :  19/6/2018
+#    Compiler   :  python
+#    Author     :  Manesh Mohan
+#    Company    :  Gadgeon, Kochi
+#
+#    Revision History:
+#
+################################################################################
+*** Settings ***
+
+Library  SeleniumLibrary    60
+Library  OperatingSystem
+
+Resource    ../ResourceFiles/Propine_Web_ResourceFile.txt
+
+
+
+*** Variables ***
+
+
+*** Keywords ***
+
+*** Comment ***
+
+*** Test Cases ***
+
+
+############################################################################
+Test case tc1: Check Date parser web is loaded in chrome browser
+    [Documentation]	Check Chrome browser is open with the epxected URL
+    [Tags]	tc1
+    Open Date parser
+
+############################################################################
+Test case tc2: Enter Valid Date and verify
+    [Documentation]	Check whether when a valid date is provided, proper results are obtained
+    [Tags]	tc2
+    Enter Valid Date
+
+############################################################################
+Test case tc3: Enter Invalid Date and verify
+    [Documentation]	Check whether when an invalid date is provided, error results are obtained
+    [Tags]	tc3
+    Enter Invalid Date
+
+############################################################################
+Test case tc4: Enter Random Text and verify
+    [Documentation]	Check whether when userenters random text, error results are obtained
+    [Tags]	tc4
+    Enter Random Text
+
+############################################################################
+Test case tc5: Enter blank Text and verify
+    [Documentation]	Check whether when user enters blank text, error results are obtained
+    [Tags]	tc5
+    Enter Blank Text
+
+############################################################################
+Test case tc6: Enter random integers and verify
+    [Documentation]	Check whether when user enters random integers, error results are obtained
+    [Tags]	tc6
+    Enter Random Integers
+
+############################################################################
+Test case tc7: refresh page after submitting a result
+    [Documentation]	Check whether when user refreshes the page after submitting a result, results is reset
+    [Tags]	tc7
+    Refresh Page After Result
+
+############################################################################
+Test case tc8: Enter date in the format dd/mm/yyyy annd see
+    [Documentation]	Check whether when user enters date in the format, dd/mm/yyyy and expected results
+    [Tags]	tc8
+    Enter Different Date Format
+
+############################################################################
+Test case tc9: Check result and actual data matches
+    [Documentation]	Check whether when the results and the actual data matches
+    [Tags]	tc9
+    Check Result Against Actual
+
+############################################################################
+Test case tc10: Enter special characters and verify
+    [Documentation]	Check whether when user enters special characters error is displayed
+    [Tags]	tc10
+    Enter Special Characters
+
+############################################################################
+Test case tc11: Enter Zero in date format
+    [Documentation]	Check whether when user enters special characters error is displayed
+    [Tags]	tc11
+    Enter Zero In Date Format
+
+############################################################################
+Test case tc13: Enter date and month and verify
+    [Documentation]	Check when user enters day and month only in the field
+    [Tags]	tc13
+    Enter Day And Month Only
+
+############################################################################
+Test case tc14: Enter year only and verify
+    [Documentation]	Check when user enters year only in the date field
+    [Tags]	tc14
+    Enter Year Only
+
+############################################################################
+Test case tc15: Enter day only and verify
+    [Documentation]	Check when user enters day only in the date field
+    [Tags]	tc15
+    Enter Day Only
+
+############################################################################
+Test case tc16: Enter month only and verify
+    [Documentation]	Check when user enters month only in the date field
+    [Tags]	tc16
+    Enter Month Only
+
+############################################################################
+Test case tc16: Enter date as text and check
+    [Documentation]	Check when user enters date as text in the  date field
+    [Tags]	tc16
+    Enter Date As Text
+
+############################################################################
+Test case tc18: Enter numbers from 1 to 13
+    [Documentation]	Check when user enters numbers from 1 to 13 in the date field
+    [Tags]	tc18
+    Enter Numbers
+
+############################################################################
+Test case tc19: Enter ZeroZero in the Date field
+    [Documentation]	Check when user enters 00 in the date field
+    [Tags]	tc19
+    Enter ZeroZero
+
+############################################################################
+Test case tc20: Enter Month name in the Date field
+    [Documentation]	Check when user enters month name in the date field
+    [Tags]	tc20
+    Enter Month Name
+
+############################################################################
+Test case tc21: EnterYear in number in the Date field
+    [Documentation]	Check when user enters year in number in the date field
+    [Tags]	tc21
+    Enter Year In Number
+
+############################################################################
+Test case tc22: Enter multiple numbers in the Date field
+    [Documentation]	Check when user enters multiple numbers in the date field
+    [Tags]	tc21
+    Enter Multiple Numbers
