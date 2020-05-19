@@ -1,13 +1,12 @@
 ##############################################################################
-#    Filename   :  TestSuite.txt
+#    Filename   :  Propine_TestSuite.txt
 #
-#    Description:  Delpheon Automated Test Cases.
+#    Description:  Propine Automated Test Cases.
 #
 #    Version    :  1.0
-#    Created    :  19/6/2018
+#    Created    :  18/05/2020
 #    Compiler   :  python
-#    Author     :  Manesh Mohan
-#    Company    :  Gadgeon, Kochi
+#    Author     :  Arun John
 #
 #    Revision History:
 #
