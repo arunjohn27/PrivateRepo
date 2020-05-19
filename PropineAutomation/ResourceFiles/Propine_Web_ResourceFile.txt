@@ -1,0 +1,297 @@
+*** Settings ***
+
+#Library  Selenium2Library
+Library SeleniumLibrary
+Library  BuiltIn
+Library  DateTime
+Variables    ../ObjectRepository/ElementLocators_Propine_Web.py
+
+
+
+
+Variables    ../TestData/TestData_Propine.py
+
+
+
+***Variables***
+
+***Keywords***
+###################################################################
+# KeyWord Name : Open Date Parser
+# Document     : Keyword to Open the Web URL and load it in a browser
+###################################################################
+Open Date Parser
+    Open Browser    ${web_url}    chrome
+    Sleep    2s
+    Maximize Browser Window
+    Sleep    2s
+    Wait Until Page Contains    ${check_results}    60s
+
+###################################################################
+# KeyWord Name : Enter Valid Date
+# Document     : Keyword to enter valid Date in the date field
+###################################################################
+Enter Valid Date
+    Input Text    ${date_field_css}    ${valid_date}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${valid_date_verify_data}
+    Sleep    2s
+
+###################################################################
+# KeyWord Name : Enter Invalid Date
+# Document     : Keyword to enter invalid Date in the date field
+###################################################################
+Enter Invalid Date
+    Input Text    ${date_field_css}    ${invalid_date}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Random Text
+# Document     : Keyword to check result when user enter Random text
+#####################################################################
+Enter Random Text
+    Input Text    ${date_field_css}    ${random_text}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Blank Text
+# Document     : Keyword to check result when user enter blank text
+#####################################################################
+Enter Blank Text
+    Input Text    ${date_field_css}    ${EMPTY}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Random Integers
+# Document     : Keyword to check result when user enter random integers
+#####################################################################
+Enter Random Integers
+    Input Text    ${date_field_css}    ${random_integers}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Refresh Page After Result
+# Document     : Keyword to check the results reset on refreshing page
+#####################################################################
+Refresh Page After Result
+    Reload Page
+    Sleep    3s
+    #Handle Alert    ACCEPT    5s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Different Date Format
+# Document     : Keyword to check when user enters a different date format
+#####################################################################
+Enter Different Date Format
+    Input Text    ${date_field_css}    ${different_date_format}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Check Result Against Actual
+# Document     : Keyword to check when user entered data against actual data
+#####################################################################
+Check Result Against Actual
+    Input Text    ${date_field_css}    ${valid_date}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${valid_date_verify_data}
+    ${date} =    Get Current Date    UTC
+    Should Contain    ${date}    ${todays_date}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Special Characters
+# Document     : Keyword to check result when user enter special characters
+#####################################################################
+Enter Special Characters
+    Input Text    ${date_field_css}    ${special_characters}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Zero In Date Format
+# Document     : Keyword to check result when user enters 00 in date format
+#####################################################################
+Enter Zero In Date Format
+    Input Text    ${date_field_css}    ${zero_in_date}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Day And Month Only
+# Document     : Keyword to check result when user enter date and month only
+#####################################################################
+Enter Day And Month Only
+    Input Text    ${date_field_css}    ${day_and_month}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${year_2001}
+    Sleep    2s
+
+
+#####################################################################
+# KeyWord Name : Enter Year Only
+# Document     : Keyword to check result when user enter year only
+#####################################################################
+Enter Year Only
+    Input Text    ${date_field_css}    ${year_only}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${year_2020}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Day Only
+# Document     : Keyword to check result when user enter day only
+#####################################################################
+Enter Day Only
+    Input Text    ${date_field_css}    ${day_only}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${year_2001}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Month Only
+# Document     : Keyword to check result when user enter month only
+#####################################################################
+Enter Month Only
+    Input Text    ${date_field_css}    ${month_only}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${year_2001}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Date As Text
+# Document     : Keyword to check result when user enter date as text
+#####################################################################
+Enter Date As Text
+    Input Text    ${date_field_css}    ${date_as_text}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${expected_result_date_as_text}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Numbers
+# Document     : Keyword to check result when user enter numbers from 1 to 13
+#####################################################################
+Enter Numbers
+    Input Text    ${date_field_css}    ${one_num}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${month_jan}
+    Sleep    2s
+    Input Text    ${date_field_css}    ${two_num}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${month_feb}
+    Sleep    2s
+    Input Text    ${date_field_css}    ${thirteen_num}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter ZeroZero
+# Document     : Keyword to check result when user enter 00 in Date field
+#####################################################################
+Enter ZeroZero
+    Input Text    ${date_field_css}    ${zero_val}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${year_2000}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Month Name
+# Document     : Keyword to check result when user enter month name in Date field
+#####################################################################
+Enter Month Name
+    Input Text    ${date_field_css}    ${month_jan}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Year In Number
+# Document     : Keyword to check result when user enter year in number in Date field
+#####################################################################
+Enter Year In Number
+    Input Text    ${date_field_css}    ${year_2025}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${year_2025}
+    Sleep    2s
+
+#####################################################################
+# KeyWord Name : Enter Multiple Numbers
+# Document     : Keyword to check result when user enter multiple numbers in Date field
+#####################################################################
+Enter Multiple Numbers
+    Input Text    ${date_field_css}    ${four_digit_num}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${four_digit_num}
+    Sleep    2s
+    Input Text    ${date_field_css}    ${five_digit_num}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${five_digit_num}
+    Sleep    2s
+    Input Text    ${date_field_css}    ${six_digit_num}
+    Sleep    2s
+    Click Element    ${submit_button_css}
+    Sleep    2s
+    Wait Until Page Contains    ${invalid_date_verify_data}
+    Sleep    2s
+    Close Browser
+
+

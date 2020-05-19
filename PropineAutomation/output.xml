@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.8.2 on win32)" generated="20200511 23:17:17.113" rpa="false">
+<suite id="s1" name="Document Manage TestSuite" source="D:\Klatt Works\KlattWorksTestAutomation\TestScripts\Document_Manage_TestSuite.txt">
+<test id="s1-t1" name="Test case 123: Check whether user can login with valid username and password">
+<kw name="Login Valid Credentials" library="Doc_Manage_Web_ResourceFile">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>https://52.172.206.138/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200511 23:17:17.359" level="INFO">Opening browser 'chrome' to base url 'https://52.172.206.138/'.</msg>
+<status status="PASS" starttime="20200511 23:17:17.359" endtime="20200511 23:17:20.725"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20200511 23:17:20.725" endtime="20200511 23:17:22.841"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Advanced</arg>
+<arg>60s</arg>
+</arguments>
+<status status="PASS" starttime="20200511 23:17:22.841" endtime="20200511 23:17:22.857"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="details-button"]</arg>
+</arguments>
+<msg timestamp="20200511 23:17:22.857" level="INFO">Clicking button '//*[@id="details-button"]'.</msg>
+<status status="PASS" starttime="20200511 23:17:22.857" endtime="20200511 23:17:22.924"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200511 23:17:24.925" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200511 23:17:22.924" endtime="20200511 23:17:24.925"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="proceed-link"]</arg>
+</arguments>
+<msg timestamp="20200511 23:17:24.925" level="INFO">Clicking link '//*[@id="proceed-link"]'.</msg>
+<status status="PASS" starttime="20200511 23:17:24.925" endtime="20200511 23:17:25.860"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20200511 23:17:27.861" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200511 23:17:25.861" endtime="20200511 23:17:27.861"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Join</arg>
+<arg>30s</arg>
+</arguments>
+<status status="PASS" starttime="20200511 23:17:27.861" endtime="20200511 23:17:27.873"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>css:body &gt; app-root &gt; app-klattworks-main &gt; div.row &gt; div:nth-child(1) &gt; div &gt; button</arg>
+</arguments>
+<msg timestamp="20200511 23:17:27.873" level="INFO">Clicking button 'css:body &gt; app-root &gt; app-klattworks-main &gt; div.row &gt; div:nth-child(1) &gt; div &gt; button'.</msg>
+<status status="PASS" starttime="20200511 23:17:27.873" endtime="20200511 23:17:27.957"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200511 23:17:30.960" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200511 23:17:27.957" endtime="20200511 23:17:30.960"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>css:body &gt; app-root &gt; app-room &gt; div.common-control-wrap &gt; div &gt; span &gt; button</arg>
+<arg>60s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200511 23:18:30.120" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=81.0.4044.138)
+</msg>
+<status status="FAIL" starttime="20200511 23:18:18.097" endtime="20200511 23:18:30.120"></status>
+</kw>
+<msg timestamp="20200511 23:18:30.120" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=81.0.4044.138)
+</msg>
+<msg timestamp="20200511 23:18:30.125" level="FAIL">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=81.0.4044.138)
+</msg>
+<status status="FAIL" starttime="20200511 23:17:30.960" endtime="20200511 23:18:30.125"></status>
+</kw>
+<status status="FAIL" starttime="20200511 23:17:17.359" endtime="20200511 23:18:30.125"></status>
+</kw>
+<doc>Check whether user can login with valid username and password</doc>
+<tags>
+<tag>123</tag>
+</tags>
+<status status="FAIL" starttime="20200511 23:17:17.358" endtime="20200511 23:18:30.126" critical="yes">WebDriverException: Message: chrome not reachable
+  (Session info: chrome=81.0.4044.138)
+</status>
+</test>
+<status status="FAIL" starttime="20200511 23:17:17.115" endtime="20200511 23:18:30.128"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">123</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Document Manage TestSuite">Document Manage TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200511 23:17:17.351" level="WARN">Imported resource file 'D:\Klatt Works\KlattWorksTestAutomation\ConfigurationBase\environmentvariable.txt' is empty.</msg>
+<msg timestamp="20200511 23:17:17.354" level="ERROR">Error in file 'D:\Klatt Works\KlattWorksTestAutomation\ResourceFiles\Doc_Manage_Web_ResourceFile.txt' on line 4: Non-existing setting 'Library SeleniumLibrary'.</msg>
+<msg timestamp="20200511 23:18:30.120" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: WebDriverException: Message: chrome not reachable
+  (Session info: chrome=81.0.4044.138)
+</msg>
+</errors>
+</robot>

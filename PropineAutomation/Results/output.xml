@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.2 on win32)" generated="20200429 15:27:59.500" rpa="false">
+<suite id="s1" name="Testcase" source="D:\PycharmProjects\DocManagement\TestScripts\Testcase.txt">
+<test id="s1-t1" name="Test case 123: Check whether user can login with valid username and password">
+<kw name="Login Valid Credentials" library="Web">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>http://20.44.40.90:8082/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20200429 15:27:59.762" level="INFO">Opening browser 'chrome' to base url 'http://20.44.40.90:8082/'.</msg>
+<status status="PASS" starttime="20200429 15:27:59.762" endtime="20200429 15:28:09.314"></status>
+</kw>
+<status status="PASS" starttime="20200429 15:27:59.761" endtime="20200429 15:28:09.314"></status>
+</kw>
+<doc>Check whether user can login with valid username and password</doc>
+<tags>
+<tag>123</tag>
+</tags>
+<status status="PASS" starttime="20200429 15:27:59.761" endtime="20200429 15:28:09.315" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200429 15:27:59.502" endtime="20200429 15:28:09.317"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">123</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Testcase">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200429 15:27:59.496" level="WARN">Automatically parsing other than '*.robot' files is deprecated. Convert 'D:\PycharmProjects\DocManagement\TestScripts\Testcase.txt' to '*.robot' format or use '--extension' to explicitly configure which files to parse.</msg>
+<msg timestamp="20200429 15:27:59.503" level="ERROR">Error in file 'D:\PycharmProjects\DocManagement\TestScripts\Testcase.txt': Setting variable '' failed: Invalid variable name ''.</msg>
+<msg timestamp="20200429 15:27:59.708" level="ERROR">Error in file 'D:\PycharmProjects\DocManagement\TestScripts\Testcase.txt': Resource file '..\ConfigurationBase\ConfigurationSetup.txt' does not exist.</msg>
+<msg timestamp="20200429 15:27:59.754" level="ERROR">Error in file 'D:\PycharmProjects\DocManagement\ResourceFile\Web.txt': Variable file '..\ObjectRepository\ElementLocators_Web.py' does not exist.</msg>
+<msg timestamp="20200429 15:27:59.755" level="ERROR">Error in file 'D:\PycharmProjects\DocManagement\ResourceFile\Web.txt': Variable file '..\TestData\Testdata_web.py' does not exist.</msg>
+<msg timestamp="20200429 15:27:59.757" level="ERROR">Error in file 'D:\PycharmProjects\DocManagement\ResourceFile\Web.txt': Variable file '..\Libraries\Sensor_data.py' does not exist.</msg>
+<msg timestamp="20200429 15:27:59.758" level="ERROR">Error in file 'D:\PycharmProjects\DocManagement\TestScripts\Testcase.txt': Resource file '..\ResourceFiles\HelperMethods.txt' does not exist.</msg>
+</errors>
+</robot>
